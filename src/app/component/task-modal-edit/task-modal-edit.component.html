@@ -1,0 +1,68 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Task</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p class="input-group pt-4 ps-4"><b>Enter task name :</b></p>
+        <div class="input-group ps-4 pe-4">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter"
+            name="task"
+            [(ngModel)]="editTaskValue"
+          />
+        </div>
+        <div class="input-group p-4">
+          <form class="row row-cols-sm-auto">
+            <label for="dp" class="input-group ps-3 pb-3"
+              ><b>Select the deadline : </b></label
+            >
+            <div class="col-12">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  placeholder="yyyy-mm-dd"
+                  name="datePicker"
+                  [(ngModel)]="addDatePickerValue"
+                  ngbDatepicker
+                  #d="ngbDatepicker"
+                />
+                <button
+                  class="btn btn-outline-secondary calendar"
+                  (click)="d.toggle()"
+                  type="button"
+                ></button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-12 text-center">
+          <button
+            class="btn btn-outline-success w-75 mb-3"
+            type="button"
+            (click)="editTask()"
+          >
+            Edit
+          </button>
+        </div>
+        <!--<app-task-form></app-task-form>-->
+      </div>
+    </div>
+  </div>
+</div>
